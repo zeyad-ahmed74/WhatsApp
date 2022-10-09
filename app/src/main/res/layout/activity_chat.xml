@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FA078376"
+    android:animateLayoutChanges="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back_icon"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/ic_back"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginStart="@dimen/_4sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chat_img"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_40sdp"
+        tools:background="@color/gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/back_icon"/>
+
+    <TextView
+        android:id="@+id/Chat_name"
+        android:layout_width="@dimen/_210sdp"
+        app:layout_constraintStart_toEndOf="@id/chat_img"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingStart="@dimen/_8sdp"
+        android:textSize="@dimen/_30sdp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:enabled="true"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/send_msg"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/backgroud_chat"
+        app:layout_constraintTop_toBottomOf="@id/Chat_name">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/chat_messages"
+            app:stackFromEnd="false"
+            app:reverseLayout="true"
+            tools:listitem="@layout/chat_design"
+            android:visibility="visible"/>
+
+    </FrameLayout>
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="@dimen/_240sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:paddingStart="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:hint="@string/type_a_message"
+            android:textColorHint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:hintTextColor="@color/black"
+            android:background="@drawable/background_chat_input"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/Msg_edittext"
+            android:textSize="@dimen/_18sdp"/>
+
+    <FrameLayout
+        android:id="@+id/send_msg"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/background_chat_input"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:tint="@color/white"
+            android:src="@drawable/ic_baseline_send_24"/>
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

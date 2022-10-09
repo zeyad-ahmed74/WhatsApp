@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintGuide_percent="0.2"
+        android:id="@+id/g_line"
+        android:orientation="horizontal"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/whatsapplogo2"
+        android:layout_marginTop="@dimen/_15sdp"/>
+    <TextView
+        android:id="@+id/Sign_Up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/g_line"
+        android:textSize="@dimen/_40sdp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="@string/signup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/My_User_Name_Layout"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        app:hintEnabled="true"
+        android:hint="@string/my_name"
+        app:hintTextColor="@color/black"
+        app:prefixTextColor="@color/black"
+        android:background="@color/whatsapp_tab_layout_color"
+        app:startIconDrawable="@drawable/ic_person"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:helperTextEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/Sign_Up"
+        android:layout_marginTop="@dimen/_25sdp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/My_User_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Phone_Number_Layout"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="wrap_content"
+        app:hintEnabled="true"
+        android:hint="@string/phone_number"
+        app:hintTextColor="@color/black"
+        app:prefixTextColor="@color/black"
+        android:background="@color/whatsapp_tab_layout_color"
+        app:startIconDrawable="@drawable/ic_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:helperTextEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/My_User_Name_Layout"
+        android:layout_marginTop="@dimen/_25sdp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/Phone_Number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/Send_SMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/Phone_Number_Layout"
+        android:layout_marginTop="@dimen/_24sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/send_sms"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_20sdp"
+        android:enabled="true"
+        android:background="@drawable/back_ground_button"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/Code_Layout"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/Send_SMS"
+        android:hint="@string/code"
+        app:startIconDrawable="@drawable/ic_baseline_code_24"
+        android:background="@color/whatsapp_tab_layout_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:id="@+id/Code"
+            android:layout_height="wrap_content"/>
+
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/Verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/Code_Layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:background="@drawable/back_ground_button"
+        android:textAllCaps="false"
+        android:text="@string/verify"
+        android:enabled="false"
+        android:textSize="@dimen/_20sdp"/>
+
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#B7C4C8CC">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

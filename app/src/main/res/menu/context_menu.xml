@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/pin"
+          android:id="@+id/option1"/>
+    <item android:title="@string/mute"
+          android:id="@+id/option2"/>
+    <item android:title="@string/Archive"
+        android:id="@+id/option3"/>
+
+</menu>
